@@ -23,6 +23,7 @@ namespace Database_Migrater
         public static string sqluser =Login.username;
         public static string sqlpass =Login.pass;
         public static SqlConnection sqlconn = sqlconnect.sqlconn(sqlname,sqldata,sqluser,sqlpass);
+        public static string tablename;
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -120,14 +121,15 @@ namespace Database_Migrater
         {
             if (cbx_table.SelectedIndex != 0)
             {
-                string tablename = cbx_table.Text.ToString();
+                tablename = cbx_table.Text.ToString();
                 try
                 {
 
                     string sql = @" use " + sqldata + " SELECT * FROM [dbo]." + tablename;
                     DataTable dt = sqlconnect.getData(sql, sqlconn);
                     dgv_MSSQL.DataSource = dt;
-                    label_test.Text = tablename;
+                    
+                    
                 }
                 catch (Exception ex)
                 {
@@ -135,6 +137,27 @@ namespace Database_Migrater
                     MessageBox.Show(ex.Message);
                 }
 
+            }
+            
+        }
+
+        private void btn_phantan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txt_dk == null)
+                {
+                    string sql = "select * into " + tablename + " from " + tablename + " ";
+                }
+                else
+                {
+                    string sql = "select * into " + tablename + " from " + tablename + " " + txt_dk;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
             
         }

@@ -33,10 +33,8 @@ namespace Database_Migrater
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btn_phantan = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label_test = new System.Windows.Forms.Label();
             this.dgv_MSSQL = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_stat = new System.Windows.Forms.Label();
@@ -50,6 +48,7 @@ namespace Database_Migrater
             this.txt_mysqldata = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txt_dk = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MSSQL)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -83,12 +82,12 @@ namespace Database_Migrater
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(1411, 53);
+            this.label4.Location = new System.Drawing.Point(788, 40);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(208, 26);
+            this.label4.Size = new System.Drawing.Size(206, 26);
             this.label4.TabIndex = 6;
-            this.label4.Text = "ĐIều kiện phân tán";
+            this.label4.Text = "Điều kiện phân tán";
             // 
             // label5
             // 
@@ -101,64 +100,50 @@ namespace Database_Migrater
             this.label5.TabIndex = 7;
             this.label5.Text = "PHÂN TÁN TỚI MYSQL";
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.richTextBox1.Location = new System.Drawing.Point(1328, 95);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(400, 198);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
-            // 
             // btn_phantan
             // 
             this.btn_phantan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_phantan.Location = new System.Drawing.Point(1464, 324);
+            this.btn_phantan.Location = new System.Drawing.Point(1084, 293);
             this.btn_phantan.Margin = new System.Windows.Forms.Padding(4);
             this.btn_phantan.Name = "btn_phantan";
             this.btn_phantan.Size = new System.Drawing.Size(157, 47);
             this.btn_phantan.TabIndex = 9;
-            this.btn_phantan.Text = "Disintegrate";
+            this.btn_phantan.Text = "Bắt đầu phân tán";
             this.btn_phantan.UseVisualStyleBackColor = true;
+            this.btn_phantan.Click += new System.EventHandler(this.btn_phantan_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox2.Controls.Add(this.label_test);
+            this.groupBox2.Controls.Add(this.txt_dk);
             this.groupBox2.Controls.Add(this.dgv_MSSQL);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.cbx_table);
             this.groupBox2.Controls.Add(this.btn_phantan);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Enabled = false;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 441);
+            this.groupBox2.Location = new System.Drawing.Point(555, 81);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1886, 602);
+            this.groupBox2.Size = new System.Drawing.Size(1357, 431);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "MS SQLSERVER";
             this.groupBox2.Visible = false;
             // 
-            // label_test
-            // 
-            this.label_test.AutoSize = true;
-            this.label_test.Location = new System.Drawing.Point(469, 53);
-            this.label_test.Name = "label_test";
-            this.label_test.Size = new System.Drawing.Size(32, 16);
-            this.label_test.TabIndex = 11;
-            this.label_test.Text = "test";
-            // 
             // dgv_MSSQL
             // 
+            this.dgv_MSSQL.AllowUserToAddRows = false;
+            this.dgv_MSSQL.AllowUserToDeleteRows = false;
+            this.dgv_MSSQL.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_MSSQL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_MSSQL.Location = new System.Drawing.Point(11, 95);
+            this.dgv_MSSQL.Location = new System.Drawing.Point(11, 78);
             this.dgv_MSSQL.Name = "dgv_MSSQL";
+            this.dgv_MSSQL.ReadOnly = true;
+            this.dgv_MSSQL.RowHeadersVisible = false;
             this.dgv_MSSQL.RowHeadersWidth = 51;
             this.dgv_MSSQL.RowTemplate.Height = 24;
-            this.dgv_MSSQL.Size = new System.Drawing.Size(1277, 478);
+            this.dgv_MSSQL.Size = new System.Drawing.Size(932, 270);
             this.dgv_MSSQL.TabIndex = 10;
             // 
             // groupBox1
@@ -178,7 +163,7 @@ namespace Database_Migrater
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 81);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(933, 354);
+            this.groupBox1.Size = new System.Drawing.Size(537, 431);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MYSQL SERVER";
@@ -187,7 +172,7 @@ namespace Database_Migrater
             // 
             this.label_stat.AutoSize = true;
             this.label_stat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_stat.Location = new System.Drawing.Point(548, 263);
+            this.label_stat.Location = new System.Drawing.Point(423, 253);
             this.label_stat.Name = "label_stat";
             this.label_stat.Size = new System.Drawing.Size(0, 29);
             this.label_stat.TabIndex = 13;
@@ -195,7 +180,7 @@ namespace Database_Migrater
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(564, 206);
+            this.checkBox1.Location = new System.Drawing.Point(450, 235);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(61, 20);
             this.checkBox1.TabIndex = 12;
@@ -206,7 +191,7 @@ namespace Database_Migrater
             // txt_mysqlserver
             // 
             this.txt_mysqlserver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mysqlserver.Location = new System.Drawing.Point(260, 45);
+            this.txt_mysqlserver.Location = new System.Drawing.Point(156, 54);
             this.txt_mysqlserver.Name = "txt_mysqlserver";
             this.txt_mysqlserver.Size = new System.Drawing.Size(288, 30);
             this.txt_mysqlserver.TabIndex = 11;
@@ -214,7 +199,7 @@ namespace Database_Migrater
             // 
             // btn_mysql
             // 
-            this.btn_mysql.Location = new System.Drawing.Point(294, 247);
+            this.btn_mysql.Location = new System.Drawing.Point(198, 265);
             this.btn_mysql.Name = "btn_mysql";
             this.btn_mysql.Size = new System.Drawing.Size(187, 69);
             this.btn_mysql.TabIndex = 10;
@@ -225,7 +210,7 @@ namespace Database_Migrater
             // txt_mysqluser
             // 
             this.txt_mysqluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mysqluser.Location = new System.Drawing.Point(260, 147);
+            this.txt_mysqluser.Location = new System.Drawing.Point(156, 175);
             this.txt_mysqluser.Name = "txt_mysqluser";
             this.txt_mysqluser.Size = new System.Drawing.Size(288, 30);
             this.txt_mysqluser.TabIndex = 9;
@@ -234,18 +219,18 @@ namespace Database_Migrater
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(166, 202);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(48, 229);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 22);
+            this.label7.Size = new System.Drawing.Size(102, 26);
             this.label7.TabIndex = 8;
             this.label7.Text = "Password";
             // 
             // txt_mysqlpass
             // 
             this.txt_mysqlpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mysqlpass.Location = new System.Drawing.Point(260, 196);
+            this.txt_mysqlpass.Location = new System.Drawing.Point(156, 229);
             this.txt_mysqlpass.Name = "txt_mysqlpass";
             this.txt_mysqlpass.Size = new System.Drawing.Size(288, 30);
             this.txt_mysqlpass.TabIndex = 7;
@@ -255,18 +240,18 @@ namespace Database_Migrater
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(171, 105);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(55, 118);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 22);
+            this.label6.Size = new System.Drawing.Size(95, 26);
             this.label6.TabIndex = 6;
             this.label6.Text = "Database";
             // 
             // txt_mysqldata
             // 
             this.txt_mysqldata.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mysqldata.Location = new System.Drawing.Point(260, 99);
+            this.txt_mysqldata.Location = new System.Drawing.Point(156, 118);
             this.txt_mysqldata.Name = "txt_mysqldata";
             this.txt_mysqldata.Size = new System.Drawing.Size(288, 30);
             this.txt_mysqldata.TabIndex = 5;
@@ -275,24 +260,32 @@ namespace Database_Migrater
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(166, 155);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(50, 177);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 22);
+            this.label1.Size = new System.Drawing.Size(104, 26);
             this.label1.TabIndex = 4;
             this.label1.Text = "Username";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(145, 51);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(25, 54);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 22);
+            this.label3.Size = new System.Drawing.Size(129, 26);
             this.label3.TabIndex = 2;
             this.label3.Text = "Server name";
+            // 
+            // txt_dk
+            // 
+            this.txt_dk.Location = new System.Drawing.Point(949, 78);
+            this.txt_dk.Multiline = true;
+            this.txt_dk.Name = "txt_dk";
+            this.txt_dk.Size = new System.Drawing.Size(382, 208);
+            this.txt_dk.TabIndex = 12;
             // 
             // MainForm
             // 
@@ -325,7 +318,6 @@ namespace Database_Migrater
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btn_phantan;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgv_MSSQL;
@@ -341,7 +333,7 @@ namespace Database_Migrater
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox txt_mysqlserver;
         private System.Windows.Forms.Label label_stat;
-        private System.Windows.Forms.Label label_test;
+        private System.Windows.Forms.TextBox txt_dk;
     }
 }
 
