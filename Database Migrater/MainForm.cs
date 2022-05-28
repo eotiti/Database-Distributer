@@ -101,7 +101,7 @@ namespace Database_Migrater
         {
             try
             {
-                string sql = "select TABLE_NAME from " + Login.database + ".INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME !='sysdiagrams'";
+                string sql = "select TABLE_NAME from " + sqldata + ".INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME !='sysdiagrams'";
                 DataTable dt = sqlconnect.getData(sql, sqlconn);
                 for (int i = 1; i < dt.Rows.Count; i++)
                 {
